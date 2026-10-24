@@ -1,0 +1,3 @@
+UnityPy==1.25.4
+opencc-python-reimplemented
+pyinstaller==6.22.3

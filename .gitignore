@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+build/
+dist/
+**/release/*.exe
+**/release/*.zip
+*.log
+.venv/

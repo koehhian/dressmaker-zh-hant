@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-24",
+  "checks": [
+    "latest source installs all 5398 entries and image replacements",
+    "repeat install succeeds",
+    "built-in title stream is changed",
+    "restore matches every original file hash",
+    "frozen EXE installs successfully in isolated game/profile",
+    "frozen EXE restores successfully in isolated game/profile"
+  ],
+  "result": "passed",
+  "installer_sha256": "98f68396bfb45f121cd1d18e740907cb126850d4932fdda5c268ded21d94a6cc"
+}
