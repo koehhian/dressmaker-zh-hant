@@ -1,0 +1,47 @@
+name: Publish verified Windows release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - release.json
+      - distribution/**
+      - scripts/package_release.py
+      - .github/workflows/publish-release.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'koehhian/dressmaker-zh-hant'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate and package unchanged installer
+        run: python3 scripts/package_release.py
+      - name: Publish complete release with downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="$(python3 -c 'import json; print(json.load(open("release.json"))["tag"])')"
+          title="$(python3 -c 'import json; print(json.load(open("release.json"))["title"])')"
+          gh release create "$tag" dist/release/* \
+            --target "$RELEASE_COMMIT" \
+            --title "$title" \
+            --notes-file RELEASE_NOTES.md \
+            --latest

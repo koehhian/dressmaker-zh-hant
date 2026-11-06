@@ -2,7 +2,7 @@
 
 ## 下載前確認
 
-本次驗證適用 **Steam Windows 版 Dressmaker，Steam build ID 26043449**（2026-11-06 以本機已安裝版本測試）。其他 build 尚未驗證，遊戲更新後請重新確認補丁相容性。請從本專案 Releases 下載 `DressmakerZHant.exe` 或 Windows ZIP；GitHub 的「Code → Download ZIP」是原始碼，不包含可直接執行的安裝器。安裝器不需要 Python，尚未使用數位憑證簽署。
+本次驗證適用 **Steam Windows 版 Dressmaker，Steam build ID 26043449**（2026-11-06 以本機已安裝版本測試）。其他 build 尚未驗證，遊戲更新後請重新確認補丁相容性。請從本專案 Releases 下載 `DressmakerZHant.exe` 或 Windows ZIP；GitHub 的「Code → Download ZIP」是開發用儲存庫快照；一般玩家請優先下載 Releases 的安裝器或 Windows ZIP。安裝器不需要 Python，尚未使用數位憑證簽署。
 
 從 Steam 遊戲庫右鍵遊戲 → 管理 → 瀏覽本機檔案，即可找到安裝位置。預設常見位置為 `C:\Program Files (x86)\Steam\steamapps\common\Dressmaker`，選擇包含 `Dressmaker.exe` 的資料夾。
 
