@@ -2,6 +2,12 @@
 
 讓 Steam Windows 版《Dressmaker》的介面、教學、對話與部分圖片以繁體中文呈現。提供一鍵安裝、原檔備份與還原工具，玩家不需要安裝 Python。
 
+這份繁體中文化最初是為了家人，尤其是還在讀小學的女兒。希望她能用熟悉的繁體中文閱讀遊戲內容，少一些文字上的隔閡，多一些享受遊戲的時間。也把這份成果分享給有同樣需要的玩家。
+
+[![☕ 請我喝杯咖啡，支持繁體中文化](docs/assets/support.svg)](https://buymeacoffee.com/koehhian)
+
+喜歡這個專案的話，歡迎 ☕ [請我喝杯咖啡](https://buymeacoffee.com/koehhian)，支持後續的校對與維護。補丁免費提供，贊助完全自願。
+
 **[下載安裝器](https://github.com/koehhian/dressmaker-zh-hant/releases/latest) · [安裝與還原](docs/USER_GUIDE.md) · [回報問題](https://github.com/koehhian/dressmaker-zh-hant/issues) · [開發與更新](localization/zh-Hant/WORKFLOW.md)**
 
 ![繁體中文主選單：針影裁夢、開始遊戲與選項](docs/screenshots/main-menu.png)

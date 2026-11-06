@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="60" viewBox="0 0 280 60" role="img" aria-labelledby="title desc">
+<title id="title">Buy me a coffee — 支持 koehhian</title>
+<desc id="desc">亮黃色咖啡贊助按鈕，點擊支持繁體中文化專案。</desc>
+<rect width="280" height="60" rx="12" fill="#FFDD00"/>
+<g fill="none" stroke="#171717" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M21 24h24v12a9 9 0 0 1-9 9h-6a9 9 0 0 1-9-9z" fill="#FFF8D7"/>
+<path d="M45 26h4a6 6 0 0 1 0 12h-5M18 48h31M27 17c-4-4 4-5 0-9M37 17c-4-4 4-5 0-9"/>
+</g>
+<text x="66" y="37" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Buy me a coffee</text>
+</svg>
