@@ -6,3 +6,7 @@ dist/
 **/release/*.zip
 *.log
 .venv/
+
+backups/
+*.zh-hant-backup
+*.zh-hant-state.json

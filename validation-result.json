@@ -1,13 +1,16 @@
 {
-  "date": "2026-10-24",
-  "checks": [
-    "latest source installs all 5398 entries and image replacements",
-    "repeat install succeeds",
-    "built-in title stream is changed",
-    "restore matches every original file hash",
-    "frozen EXE installs successfully in isolated game/profile",
-    "frozen EXE restores successfully in isolated game/profile"
-  ],
+  "date": "2026-11-06",
+  "steam_build": "26043449",
   "result": "passed",
+  "checks": [
+    "5398 translation keys across 4 tables; no duplicate keys",
+    "source install and repeat-install",
+    "source restore matches 5 file hashes and profile bytes",
+    "frozen EXE install and repeat-install",
+    "frozen EXE restore matches 5 file hashes and profile bytes",
+    "built-in title stream changes and restores",
+    "temporary isolated fixture has no backup residue"
+  ],
+  "visual_evidence": "2026-10-20 archived screenshots; full gameplay not rerun",
   "installer_sha256": "98f68396bfb45f121cd1d18e740907cb126850d4932fdda5c268ded21d94a6cc"
 }

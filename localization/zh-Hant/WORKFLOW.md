@@ -19,7 +19,7 @@
 
 ## 檔案與路徑
 
-以下路徑均相對於 GemGame 專案根目錄，實際遊戲資料夾為 `C:\Program Files (x86)\Steam\steamapps\common\Dressmaker`。
+以下路徑均相對於 本專案根目錄，實際遊戲資料夾為 `C:\Program Files (x86)\Steam\steamapps\common\Dressmaker`。
 
 | 用途 | 路徑 |
 | --- | --- |
@@ -42,7 +42,7 @@
 - 工具狀態：文字包旁的 `.zh-hant-state.json`
 - 語言設定備份：`%LOCALAPPDATA%\DressmakerZHant\options.json.original`
 
-目前基準版本為 2026-10-20、5,398 筆文字，原始簡中快照保存在 `backups/source-20261020.csv`。下一次更新請以最新已發佈的 `source-YYYYMMDD.csv` 作為比對基準。
+目前基準版本為 2026-10-20、5,398 筆文字，原始簡中快照由維護者在本機保存，公開儲存庫不附原文快照。首次維護若沒有快照，請使用 `--old-source` 指定自行抽取的基準，或將差異標為待確認。下一次更新請以最新已發佈的 `source-YYYYMMDD.csv` 作為比對基準。
 
 ## 快速清單
 
@@ -66,7 +66,7 @@
 
 ```powershell
 $root   = "C:\Program Files (x86)\Steam\steamapps\common\Dressmaker"
-$locale = "C:\Users\Gem Lee\Documents\GemGame\localization\zh-Hant"
+$locale = "C:\Projects\dressmaker-zh-hant\localization\zh-Hant"
 $date   = Get-Date -Format "yyyyMMdd"
 $work   = Join-Path $locale "backups\update-$date"
 New-Item -ItemType Directory -Force $work | Out-Null
@@ -215,7 +215,7 @@ import UnityPy
 from pathlib import Path
 
 bundle = Path(r"C:\Program Files (x86)\Steam\steamapps\common\Dressmaker\Dressmaker_Data\StreamingAssets\aa\StandaloneWindows64\localization-assets-chinese(simplified)(zh-hans)_assets_all.bundle")
-out = Path(r"C:\Users\Gem Lee\Documents\GemGame\work_test\image-audit")
+out = Path(r"C:\Projects\dressmaker-zh-hant\work_test\image-audit")
 out.mkdir(parents=True, exist_ok=True)
 env = UnityPy.load(str(bundle))
 for obj in env.objects:
@@ -236,7 +236,7 @@ for obj in env.objects:
 
 ### 6. 重建安裝工具
 
-在 GemGame 專案根目錄執行：
+在 本專案根目錄執行：
 
 ```powershell
 py -m pip install UnityPy opencc-python-reimplemented pyinstaller
@@ -253,7 +253,7 @@ Copy-Item ".\dist\DressmakerZHant.exe" ".\localization\zh-Hant\release\Dressmake
 用目前實機「更新後、尚未套用」的狀態建立最小測試副本。這個副本足以測試安裝、CRC、還原與混合狀態遷移，但不能啟動遊戲。
 
 ```powershell
-$dst = "C:\Users\Gem Lee\Documents\GemGame\test_game"
+$dst = "C:\Projects\dressmaker-zh-hant\test_game"
 Remove-Item -Recurse -Force $dst -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Force "$dst\Dressmaker_Data\StreamingAssets\aa\StandaloneWindows64" | Out-Null
 Copy-Item "$root\Dressmaker.exe" $dst
@@ -395,7 +395,7 @@ Get-Content "$env:TEMP\DressmakerZHant-cli.log"
 - 基準日期：2026-10-20
 - 文字：5,398 筆，4 個語言表
 - 圖片：3 張本地化圖片 + 1 張內建主選單標題
-- 原始簡中快照：`backups/source-20261020.csv`
+- 原始簡中快照：`backups/source-20261020.csv`（本機維護檔，未隨公開版提供）
 - 翻譯備份：`backups/translations-20261020-before-update.csv`
 - 工具狀態 schema：2
 
@@ -419,6 +419,6 @@ py -m PyInstaller --noconfirm --clean ".\localization\zh-Hant\tools\DressmakerZH
 Copy-Item ".\dist\DressmakerZHant.exe" ".\localization\zh-Hant\release\DressmakerZHant.exe" -Force
 
 # 測試副本安裝與還原
-& ".\localization\zh-Hant\release\DressmakerZHant.exe" --install "C:\Users\Gem Lee\Documents\GemGame\test_game"
-& ".\localization\zh-Hant\release\DressmakerZHant.exe" --restore "C:\Users\Gem Lee\Documents\GemGame\test_game"
+& ".\localization\zh-Hant\release\DressmakerZHant.exe" --install "C:\Projects\dressmaker-zh-hant\test_game"
+& ".\localization\zh-Hant\release\DressmakerZHant.exe" --restore "C:\Projects\dressmaker-zh-hant\test_game"
 ```
